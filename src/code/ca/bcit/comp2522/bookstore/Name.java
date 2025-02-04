@@ -4,7 +4,8 @@ package ca.bcit.comp2522.bookstore;
  * Represents a person's name with a first and last name, providing various
  * utility methods for validation and manipulation of the name.
  *
- * @author Sehaj Singh Gill
+ * @author Kevin Tran
+ * @author Bullen Kosa
  * @version 1.0
  */
 public class Name

@@ -8,7 +8,7 @@ package ca.bcit.comp2522.bookstore;
  * This class supports years from 1800 to 2025, months from 1 to 12, and days depending on the month.
  * </p>
  *
- * @author Dominic Cheang
+ * @author Kevin Tran
  * @author Bullen Kosa
  * @version 1.0
  */

@@ -4,7 +4,8 @@ package ca.bcit.comp2522.bookstore;
  * Represents a Person with a name, birthdate, and optionally a death date.
  * Provides details about the person's birth and death information.
  *
- * @author Dominic Cheang
+ *  @author Kevin Tran
+ *  @author Bullen Kosa
  * @version 1.0
  */
 public class Person

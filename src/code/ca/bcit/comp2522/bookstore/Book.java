@@ -5,6 +5,7 @@ public class Book implements Comparable<Book>,
                              Reversible
 {
 
+<<<<<<< Updated upstream
     protected String title;
 
     protected int yearPublished;
@@ -63,4 +64,6 @@ public class Book implements Comparable<Book>,
 
 
 
+=======
+>>>>>>> Stashed changes
 }
