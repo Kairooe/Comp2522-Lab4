@@ -12,7 +12,8 @@ package ca.bcit.comp2522.bookstore;
  * @author Bullen Kosa
  * @version 1.0
  */
-public class Date {
+public class Date
+{
     // Constant representing month names
     private static final String JANUARY   = "January";
     private static final String FEBRUARY  = "February";
@@ -97,7 +98,8 @@ public class Date {
      */
     public Date(final int year,
                 final int month,
-                final int day) {
+                final int day)
+    {
         validateYear(year);
         this.year = year;
         validateMonth(month);
@@ -111,7 +113,8 @@ public class Date {
      *
      * @return the year of the date
      */
-    public int getYear() {
+    public int getYear()
+    {
         return year;
     }
 
@@ -120,7 +123,8 @@ public class Date {
      *
      * @return the month of the date
      */
-    public int getMonth() {
+    public int getMonth()
+    {
         return month;
     }
 
@@ -129,7 +133,8 @@ public class Date {
      *
      * @return the day of the month
      */
-    public int getDay() {
+    public int getDay()
+    {
         return day;
     }
 
@@ -138,9 +143,12 @@ public class Date {
      *
      * @return the date as a string in YYYY-MM-DD format
      */
-    public String getYyyyMmDd() {
+    public String getYyyyMmDd()
+    {
         String formattedDate;
-        formattedDate = year + "-" + String.format("%02d", month) + "-" + String.format("%02d", day);
+        formattedDate = year + "-" + String.format("%02d",
+                                                   month) + "-" + String.format("%02d",
+                                                                                day);
         return formattedDate;
     }
 
@@ -191,13 +199,15 @@ public class Date {
      *
      * @return a string representing the day of the week (e.g., "Monday", "Tuesday").
      */
-    public String getDayOfTheWeek() {
+    public String getDayOfTheWeek()
+    {
         int y;
         y = year;
         int m;
         m = month;
 
-        if (m == JANUARY_MONTH || m == FEBRUARY_MONTH) {
+        if(m == JANUARY_MONTH || m == FEBRUARY_MONTH)
+        {
             m += LAST_OF_MONTH;
             y--;
         }
@@ -207,20 +217,19 @@ public class Date {
         int cent;
         cent = y / DIGIT_EXTRACTOR;
 
-        int dayOfWeek = (day +
-                         (ZELLER_MONTH_ADJUSTMENT * (m + FIRST_OF_MONTH)) / ZELLER_DIVISOR +
-                         lastTwoDigits +
-                         (lastTwoDigits / CENTURY_DIVISOR) +
-                         (cent / CENTURY_DIVISOR) -
-                         (CENTURY_OFFSET * cent)) % DAYS_IN_WEEK;
+        int dayOfWeek = (day + (ZELLER_MONTH_ADJUSTMENT * (m + FIRST_OF_MONTH)) / ZELLER_DIVISOR + lastTwoDigits + (lastTwoDigits / CENTURY_DIVISOR) + (cent / CENTURY_DIVISOR) - (CENTURY_OFFSET * cent)) % DAYS_IN_WEEK;
 
-        if (year < YEAR_THRESHOLD_1900) {
+        if(year < YEAR_THRESHOLD_1900)
+        {
             dayOfWeek = (dayOfWeek + PRE_1900_ADJUSTMENT) % DAYS_IN_WEEK;
-        } else if (year >= YEAR_THRESHOLD_2000) {
+        }
+        else if(year >= YEAR_THRESHOLD_2000)
+        {
             dayOfWeek = (dayOfWeek + POST_2000_ADJUSTMENT) % DAYS_IN_WEEK;
         }
 
-        return switch (dayOfWeek) {
+        return switch(dayOfWeek)
+        {
             case SATURDAY -> "Saturday";
             case SUNDAY -> "Sunday";
             case MONDAY -> "Monday";
@@ -238,8 +247,10 @@ public class Date {
      * @param month the month number (1 = January, 12 = December)
      * @return the name of the month
      */
-    public static String getMonthName(final int month) {
-        return switch (month) {
+    public static String getMonthName(final int month)
+    {
+        return switch(month)
+        {
             case JANUARY_MONTH -> JANUARY;
             case FEBRUARY_MONTH -> FEBRUARY;
             case MARCH_MONTH -> MARCH;
@@ -261,8 +272,10 @@ public class Date {
      *
      * @param year the year to be validated
      */
-    private static void validateYear(final int year) {
-        if (year < MIN_YEAR || year > CURRENT_YEAR) {
+    private static void validateYear(final int year)
+    {
+        if(year < MIN_YEAR || year > CURRENT_YEAR)
+        {
             throw new IllegalArgumentException("Invalid year: " + year);
         }
     }
@@ -272,8 +285,10 @@ public class Date {
      *
      * @param month the month to be validated (1-12)
      */
-    private static void validateMonth(final int month) {
-        if (month < FIRST_OF_MONTH || month > LAST_OF_MONTH) {
+    private static void validateMonth(final int month)
+    {
+        if(month < FIRST_OF_MONTH || month > LAST_OF_MONTH)
+        {
             throw new IllegalArgumentException("Invalid month: " + month);
         }
     }
@@ -283,8 +298,10 @@ public class Date {
      *
      * @param day the day to be validated (1-31)
      */
-    private static void validateDay(final int day) {
-        if (day < FIRST_DAY_OF_MONTH || day > LAST_DAY_OF_MONTH) {
+    private static void validateDay(final int day)
+    {
+        if(day < FIRST_DAY_OF_MONTH || day > LAST_DAY_OF_MONTH)
+        {
             throw new IllegalArgumentException("Invalid day: " + day);
         }
     }

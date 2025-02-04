@@ -7,10 +7,11 @@ package ca.bcit.comp2522.bookstore;
  * @author Dominic Cheang
  * @version 1.0
  */
-public class Person {
-    public static final String ALIVE_DETAILS_FORMAT = "%s + (alive) was born on %s, %s %d, %d!";
-    public static final String DECEASED_DETAILS_FORMAT = "%s + (died %s, %s %d, %d) was born on %s, %s %d, %d!";
-    private static final String BORN_STRING = "was born on ";
+public class Person
+{
+    public static final  String ALIVE_DETAILS_FORMAT    = "%s + (alive) was born on %s, %s %d, %d!";
+    public static final  String DECEASED_DETAILS_FORMAT = "%s + (died %s, %s %d, %d) was born on %s, %s %d, %d!";
+    private static final String BORN_STRING             = "was born on ";
 
     public final Name name;
     public final Date birthDate;
@@ -23,8 +24,11 @@ public class Person {
      * @param birthDate the birthdate of the person
      * @param deathDate the death date of the person (null if the person is alive)
      */
-    public Person(final Name name, final Date birthDate, final Date deathDate) {
-        this.name = name;
+    public Person(final Name name,
+                  final Date birthDate,
+                  final Date deathDate)
+    {
+        this.name      = name;
         this.birthDate = birthDate;
         this.deathDate = deathDate;
     }
@@ -34,8 +38,10 @@ public class Person {
      *
      * @return a string containing the person's details
      */
-    public String getDetails() {
-        if (isAlive()) {
+    public String getDetails()
+    {
+        if(isAlive())
+        {
             return String.format(ALIVE_DETAILS_FORMAT,
                                  name.getFullName(),
                                  birthDate.getDayOfTheWeek().toLowerCase(),
@@ -60,7 +66,8 @@ public class Person {
      *
      * @return true if the person is alive, false otherwise
      */
-    private boolean isAlive() {
+    private boolean isAlive()
+    {
         return deathDate == null;
     }
 }
