@@ -1,5 +1,4 @@
 package ca.bcit.comp2522.bookstore;
 
-public class author
-{
+public class Author {
 }
