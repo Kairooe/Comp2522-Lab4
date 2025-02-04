@@ -1,5 +1,5 @@
 package ca.bcit.comp2522.bookstore;
 
-public class book
+public class Biography
 {
 }
