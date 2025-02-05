@@ -7,7 +7,10 @@ package ca.bcit.comp2522.bookstore;
  * @author Bullen Kosa
  * @version 1.0
  */
-public class Book implements Comparable<Book>, Printable, Reversible {
+public class Book implements
+        Comparable<Book>,
+        Printable,
+        Reversible {
 
     /* The title of the book. */
     protected String title;
@@ -16,7 +19,7 @@ public class Book implements Comparable<Book>, Printable, Reversible {
     protected int yearPublished;
 
     /* The author of the book. */
-    protected String author;
+    protected Author author;
 
     /* Maximum allowed length for a book title. */
     private static final int MAX_TITLE_LENGTH = 100;
@@ -37,7 +40,9 @@ public class Book implements Comparable<Book>, Printable, Reversible {
      * @param yearPublished the year the book was published
      * @param author        the author of the book
      */
-    public Book(final String title, final int yearPublished, final String author) {
+    public Book(final String title,
+                final int yearPublished,
+                final Author author) {
         isTitleValid(title);
         isYearPublishedValid(yearPublished);
         isAuthorValid(author);
@@ -77,8 +82,8 @@ public class Book implements Comparable<Book>, Printable, Reversible {
      *
      * @param author the author name to validate
      */
-    private static void isAuthorValid(final String author) {
-        if (author.isEmpty() || author.isBlank() || "null".equals(author)) {
+    private static void isAuthorValid(final Author author) {
+        if ("null".equals(author)) {
             throw new IllegalArgumentException("Author cannot be blank or empty");
         }
     }
