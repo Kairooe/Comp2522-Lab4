@@ -33,11 +33,15 @@ public class Main {
 
         // Display Titles Backward
         System.out.println("\nReversed Titles:");
-        System.out.println(book1.backward());
-        System.out.println(book2.backward());
-        System.out.println(book3.backward());
-        System.out.println(book4.backward());
-        System.out.println(book5.backward());
+        book1.backward();
+        System.out.println("\n");
+        book2.backward();
+        System.out.println("\n");
+        book3.backward();
+        System.out.println("\n");
+        book4.backward();
+        System.out.println("\n");
+        book5.backward();
 
         // Compare Books by Year
         System.out.println("\nComparisons:");

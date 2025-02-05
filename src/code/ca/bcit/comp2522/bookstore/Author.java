@@ -57,14 +57,16 @@ public class Author extends Person implements Printable, Reversible
         return genre;
     }
 
+    private static String reverseAuthor(final Author author) {
+        return new StringBuilder(author.getName()).reverse().toString();
+    }
+
     /**
      * Prints the details of the author, including name, birth/death details, and genre.
      */
     @Override
     public void display()
-    {
-        System.out.println(getDetails() + " They write in the " + genre + " genre.");
-    }
+    { System.out.println(getDetails() + " They write in the " + genre + " genre."); }
 
     /**
      * print author name backward
@@ -72,7 +74,7 @@ public class Author extends Person implements Printable, Reversible
      * @return author full name but backward
      */
     @Override
-    public String backward() {
-        return new StringBuilder(name.getFullName()).reverse().toString();
+    public void backward() {
+        System.out.println(reverseAuthor(this));
     }
 }

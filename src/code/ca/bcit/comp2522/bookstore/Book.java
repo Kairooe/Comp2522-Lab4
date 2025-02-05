@@ -77,6 +77,10 @@ public class Book implements
         }
     }
 
+    public String getAuthorName() {
+        return author.getName();
+    }
+
     /*
      * Validates the author name.
      *
@@ -113,7 +117,11 @@ public class Book implements
      * Displays the book details in a formatted output.
      */
     public void display() {
-        String bookDetails = String.format(BOOK_DISPLAY, title, yearPublished, author);
+        String bookDetails = String.format(
+                BOOK_DISPLAY,
+                title,
+                this.getAuthorName(),
+                yearPublished);
         System.out.println(bookDetails);
     }
 
@@ -122,8 +130,8 @@ public class Book implements
      *
      * @return
      */
-    public String backward() {
+    public void backward() {
         System.out.print(reverseTitle(this.title));
-        return null;
+
     }
 }

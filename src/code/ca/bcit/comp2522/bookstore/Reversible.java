@@ -13,5 +13,5 @@ public interface Reversible {
      *
      * @return the reversed string representation of the attribute
      */
-    String backward();
+    void backward();
 }

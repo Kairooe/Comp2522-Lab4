@@ -33,6 +33,10 @@ public class Person
         this.deathDate = deathDate;
     }
 
+    public String getName() {
+        return name.getFullName();
+    }
+
     /**
      * Gets the details of the person, including their birth and death information.
      *
