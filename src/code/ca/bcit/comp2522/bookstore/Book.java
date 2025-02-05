@@ -119,8 +119,11 @@ public class Book implements
 
     /**
      * Prints the reversed title of the book.
+     *
+     * @return
      */
-    public void backward() {
+    public String backward() {
         System.out.print(reverseTitle(this.title));
+        return null;
     }
 }
