@@ -94,7 +94,7 @@ public class Book implements
      * @param title the title to reverse
      * @return the reversed title
      */
-    private String reverseTitle(final String title) {
+    private static String reverseTitle(final String title) {
         return new StringBuilder(title).reverse().toString();
     }
 
