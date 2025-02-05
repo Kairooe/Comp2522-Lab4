@@ -52,7 +52,7 @@ public class Date
     private static final int FRIDAY    = 6;
 
     // Minimum and maximum values for years
-    private static final int MIN_YEAR     = 1800;
+    private static final int MIN_YEAR     = 1;
     private static final int CURRENT_YEAR = 2025;
 
     // Minimum and maximum values for days and months
