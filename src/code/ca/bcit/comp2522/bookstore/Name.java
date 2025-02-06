@@ -4,20 +4,23 @@ package ca.bcit.comp2522.bookstore;
  * Represents a person's name with a first and last name, providing various
  * utility methods for validation and manipulation of the name.
  *
- * @author Sehaj Singh Gill
+ * @author Sehaj Singh Gill, Bullen Kosa
  * @version 1.0
  */
 public class Name implements Printable
 {
 
+    /*
+     * The maxmimum characters allowed for a first or last name.
+     */
     private static final int    MAX_NAME_LENGTH = 50;
 
-    /**
+    /*
      * The first name of the person.
      */
     private final String first;
 
-    /**
+    /*
      * T`he last name of the person.
      */
     private final String last;
@@ -100,7 +103,7 @@ public class Name implements Printable
         return (first.trim().toUpperCase().charAt(0) + "." + last.trim().toUpperCase().charAt(0) + ".");
     }
 
-    /**
+    /*
      * Capitalizes the given name by making the first letter uppercase and the
      * remaining letters lowercase.
      *

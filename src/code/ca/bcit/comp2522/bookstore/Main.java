@@ -202,13 +202,29 @@ public class Main {
         auto4 = new Autobiography("I Know Why the Caged Bird Sings", 1969, fitzgerald);
         auto5 = new Autobiography("The Autobiography of Malcolm X", 1965, melville);
 
-        // Get Details
+        // Display books
         System.out.println("\nWelcome to the Bookstore!:");
         book1.display();
         book2.display();
         book3.display();
         book4.display();
         book5.display();
+
+        System.out.println("\nBiographies:");
+        bio1.display();
+        bio2.display();
+        bio3.display();
+        bio4.display();
+        bio5.display();
+
+        System.out.println("\nAutobiographies:");
+        auto1.display();
+        auto2.display();
+        auto3.display();
+        auto4.display();
+        auto5.display();
+
+
 
         // Display Titles Backward
         System.out.println("\nReversed Titles:");

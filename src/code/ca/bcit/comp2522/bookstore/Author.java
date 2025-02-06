@@ -36,6 +36,23 @@ public class Author extends Person implements Printable {
     }
 
     /**
+     * Constructs an Author object with a name, birthdate, optional death date, and genre.
+     *
+     * @param name      the name of the author
+     * @param birthDate the birthdate of the author
+     * @param genre     the genre of books written by the author
+     * @throws IllegalArgumentException if the genre is null, blank, or exceeds 30 characters
+     */
+    public Author(final Name name,
+                  final Date birthDate,
+                  final String genre) {
+        super(name,
+              birthDate);
+        validateGenre(genre);
+        this.genre = genre;
+    }
+
+    /**
      * Validates the genre to ensure it is not null, blank, or too long.
      *
      * @param genre the genre to validate

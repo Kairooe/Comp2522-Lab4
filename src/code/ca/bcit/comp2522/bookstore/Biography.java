@@ -15,7 +15,7 @@ public class Biography extends Book {
     private Person subject;
 
     /* Format string for displaying biography details. */
-    private static final String BIOGRAPHY_DISPLAY = "This is a Biography, of subject: %s";
+    private static final String BIOGRAPHY_DISPLAY = "Subject: %s";
 
     /**
      * Constructs a Biography with the specified title, publication year, author, and subject.
@@ -50,7 +50,7 @@ public class Biography extends Book {
      */
     public void display() {
         super.display();
-        String biographyDetails = String.format(BIOGRAPHY_DISPLAY, subject);
+        String biographyDetails = String.format(BIOGRAPHY_DISPLAY, subject.getName());
         System.out.println(biographyDetails);
     }
 

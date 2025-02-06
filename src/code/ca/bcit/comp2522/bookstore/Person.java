@@ -4,20 +4,19 @@ package ca.bcit.comp2522.bookstore;
  * Represents a Person with a name, birthdate, and optionally a death date.
  * Provides details about the person's birth and death information.
  *
- * @author Dominic Cheang
+ * @author Dominic Cheang, Bullen Kosa
  * @version 1.0
  */
 public class Person implements Comparable<Person>,
                                Printable,
                                Reversible
 {
-    public static final  String ALIVE_DETAILS_FORMAT    = "%s + (alive) was born on %s, %s %d, %d!";
-    public static final  String DECEASED_DETAILS_FORMAT = "%s + (died %s, %s %d, %d) was born on %s, %s %d, %d!";
-    private static final String BORN_STRING             = "was born on ";
+    private static final  String ALIVE_DETAILS_FORMAT    = "%s + (alive) was born on %s, %s %d, %d!";
+    private static final  String DECEASED_DETAILS_FORMAT = "%s + (died %s, %s %d, %d) was born on %s, %s %d, %d!";
 
-    public final Name name;
-    public final Date dateOfBirth;
-    public final Date dateOfDeath;
+    private final Name name;
+    private final Date dateOfBirth;
+    private final Date dateOfDeath;
 
     /**
      * Constructs a Person object with a name, birthdate, and a death date.

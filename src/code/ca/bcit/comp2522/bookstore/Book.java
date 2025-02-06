@@ -21,17 +21,14 @@ public class Book implements
     /* The minimum allowed publication year. */
     private static final int MIN_YEAR = 1;
 
-    /* Format string for displaying book details. */
-    private final String BOOK_DISPLAY = "The book %s, was published by %s in %d.";
-
     /* The title of the book. */
-    protected String title;
+    private String title;
 
     /* The year the book was published. */
-    protected int yearPublished;
+    private int yearPublished;
 
     /* The author of the book. */
-    protected Author author;
+    private Author author;
 
     /**
      * Constructs a new Book with the specified title, publication year, and author.
@@ -123,12 +120,16 @@ public class Book implements
     /**
      * Displays the book details in a formatted output.
      */
+    @Override
     public void display() {
-        String bookDetails = String.format(
-                BOOK_DISPLAY,
-                title,
-                this.getAuthorName(),
-                yearPublished);
+        final StringBuilder bookDetails;
+        bookDetails = new StringBuilder();
+        bookDetails.append("\nTitle: ");
+        bookDetails.append(title);
+        bookDetails.append("\nYear Published: ");
+        bookDetails.append(yearPublished);
+        bookDetails.append("\nAuthor: ");
+        bookDetails.append(author.getName());
         System.out.println(bookDetails);
     }
 
