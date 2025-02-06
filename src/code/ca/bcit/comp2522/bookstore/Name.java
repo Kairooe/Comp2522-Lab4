@@ -7,11 +7,10 @@ package ca.bcit.comp2522.bookstore;
  * @author Sehaj Singh Gill
  * @version 1.0
  */
-public class Name
+public class Name implements Printable
 {
 
-    private static final int    MAX_NAME_LENGTH = 45;
-    private static final String INVALID_KEYWORD = "admin";
+    private static final int    MAX_NAME_LENGTH = 50;
 
     /**
      * The first name of the person.
@@ -35,33 +34,40 @@ public class Name
      */
     public Name(final String first, final String last)
     {
+        validateFirstName(first);
+        validateLastName(last);
+        this.first = first;
+        this.last  = last;
+    }
+
+    /*
+     *Validates the first name.
+     */
+    private static void validateFirstName(final String first) {
         if (first == null || first.isBlank())
         {
             throw new IllegalArgumentException("First name cannot be null or empty");
         }
-
-        if (last == null || last.isBlank())
-        {
-            throw new IllegalArgumentException("Last name cannot be null or empty");
-        }
-
         if (first.length() > MAX_NAME_LENGTH)
         {
             throw new IllegalArgumentException("First name cannot exceed " + MAX_NAME_LENGTH + " characters");
         }
 
+    }
+
+    /*
+     * Validates the last name.
+     */
+    private static void validateLastName(final String last) {
+        if (last == null || last.isBlank())
+        {
+            throw new IllegalArgumentException("Last name cannot be null or empty");
+        }
         if (last.length() > MAX_NAME_LENGTH)
         {
             throw new IllegalArgumentException("Last name cannot exceed " + MAX_NAME_LENGTH + " characters");
         }
 
-        if (first.toLowerCase().contains(INVALID_KEYWORD) || last.toLowerCase().contains(INVALID_KEYWORD))
-        {
-            throw new IllegalArgumentException("Names cannot contain the word \"" + INVALID_KEYWORD + "\".");
-        }
-
-        this.first = first;
-        this.last  = last;
     }
 
     /**
@@ -115,6 +121,14 @@ public class Name
     public String getFullName()
     {
         return capitalize(first) + " " + capitalize(last);
+    }
+
+    /**
+     * Prints the full name of the user.,
+     */
+    public void display() {
+
+        System.out.print(getFullName());
     }
 
     /**

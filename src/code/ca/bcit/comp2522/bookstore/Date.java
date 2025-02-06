@@ -12,7 +12,7 @@ package ca.bcit.comp2522.bookstore;
  * @author Bullen Kosa
  * @version 1.0
  */
-public class Date
+public class Date implements Printable
 {
     // Constant representing month names
     private static final String JANUARY   = "January";
@@ -265,6 +265,13 @@ public class Date
             case DECEMBER_MONTH -> DECEMBER;
             default -> throw new IllegalArgumentException("Invalid month: " + month);
         };
+    }
+
+    /**
+     * Prints the date.
+     */
+    public void display() {
+        System.out.print(this.getYyyyMmDd());
     }
 
     /*

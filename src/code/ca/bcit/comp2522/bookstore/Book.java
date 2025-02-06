@@ -12,15 +12,6 @@ public class Book implements
         Printable,
         Reversible {
 
-    /* The title of the book. */
-    protected String title;
-
-    /* The year the book was published. */
-    protected int yearPublished;
-
-    /* The author of the book. */
-    protected Author author;
-
     /* Maximum allowed length for a book title. */
     private static final int MAX_TITLE_LENGTH = 100;
 
@@ -32,6 +23,15 @@ public class Book implements
 
     /* Format string for displaying book details. */
     private final String BOOK_DISPLAY = "The book %s, was published by %s in %d.";
+
+    /* The title of the book. */
+    protected String title;
+
+    /* The year the book was published. */
+    protected int yearPublished;
+
+    /* The author of the book. */
+    protected Author author;
 
     /**
      * Constructs a new Book with the specified title, publication year, and author.
@@ -46,9 +46,9 @@ public class Book implements
         isTitleValid(title);
         isYearPublishedValid(yearPublished);
         isAuthorValid(author);
-        this.title = title;
+        this.title         = title;
         this.yearPublished = yearPublished;
-        this.author = author;
+        this.author        = author;
     }
 
     /*
@@ -77,10 +77,6 @@ public class Book implements
         }
     }
 
-    public String getAuthorName() {
-        return author.getName();
-    }
-
     /*
      * Validates the author name.
      *
@@ -103,6 +99,15 @@ public class Book implements
     }
 
     /**
+     * Gets the authors name.
+     *
+     * @return the authors name
+     */
+    public String getAuthorName() {
+        return author.getName();
+    }
+
+    /**
      * Compares this book to another book based on the publication year.
      *
      * @param o the other book to compare
@@ -110,7 +115,9 @@ public class Book implements
      */
     @Override
     public int compareTo(final Book o) {
+
         return Integer.compare(this.yearPublished, o.yearPublished);
+
     }
 
     /**

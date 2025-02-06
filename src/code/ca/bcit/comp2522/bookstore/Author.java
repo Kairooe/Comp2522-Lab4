@@ -4,12 +4,15 @@ package ca.bcit.comp2522.bookstore;
  * Represents an Author, which is a type of Person.
  * Includes a genre and implements the Printable interface.
  *
- * @author Kevin Tran
+ * @author Kevin Tran, Bullen Kosa
  * @version 1.0
  */
-public class Author extends Person implements Printable, Reversible
-{
+public class Author extends Person implements Printable {
+
+    /* The maximum length of a genre name. */
     private static final int    MAX_GENRE_LENGTH = 30;
+
+    /* A genre. */
     private final        String genre;
 
     /**
@@ -24,8 +27,7 @@ public class Author extends Person implements Printable, Reversible
     public Author(final Name name,
                   final Date birthDate,
                   final Date deathDate,
-                  final String genre)
-    {
+                  final String genre) {
         super(name,
               birthDate,
               deathDate);
@@ -39,12 +41,12 @@ public class Author extends Person implements Printable, Reversible
      * @param genre the genre to validate
      * @throws IllegalArgumentException if the genre is invalid
      */
-    private void validateGenre(final String genre)
-    {
-        if(genre == null || genre.isBlank() || genre.length() > MAX_GENRE_LENGTH)
-        {
-            throw new IllegalArgumentException("Genre must be non-null, non-blank, and at most 30 characters.");
+    private void validateGenre(final String genre) {
+        if (genre == null || genre.isBlank() || genre.length() > MAX_GENRE_LENGTH) {
+            throw new IllegalArgumentException("Genre must be non-null and non-blank.");
         }
+        if (genre.length() > MAX_GENRE_LENGTH)
+            throw new IllegalArgumentException("Genre must not be longer than 30 characters.");
     }
 
     /**
@@ -52,29 +54,17 @@ public class Author extends Person implements Printable, Reversible
      *
      * @return the genre
      */
-    public String getGenre()
-    {
+    public String getGenre() {
         return genre;
     }
 
-    private static String reverseAuthor(final Author author) {
-        return new StringBuilder(author.getName()).reverse().toString();
-    }
 
     /**
      * Prints the details of the author, including name, birth/death details, and genre.
      */
     @Override
-    public void display()
-    { System.out.println(getDetails() + " They write in the " + genre + " genre."); }
-
-    /**
-     * print author name backward
-     *
-     * @return author full name but backward
-     */
-    @Override
-    public void backward() {
-        System.out.println(reverseAuthor(this));
+    public void display() {
+        System.out.println(getDetails() + " They write in the " + genre + " genre.");
     }
+
 }
