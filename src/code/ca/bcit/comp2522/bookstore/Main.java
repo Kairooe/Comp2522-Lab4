@@ -64,7 +64,7 @@ public class Main {
 
         final Date gilbertDOD;
 
-        // Declare all Person objects
+        // Declare all Person objects (Subjects)
         final Person robertMoses;
         final Person steveJobs;
         final Person winstonChurchill;
@@ -78,6 +78,7 @@ public class Main {
         final Author fitzgerald;
         final Author melville;
 
+        //Authors of biographies
         final Author caro;
         final Author isaacson1;
         final Author gilbert;
@@ -212,25 +213,36 @@ public class Main {
         // Display Titles Backward
         System.out.println("\nReversed Titles:");
         book1.backward();
-        System.out.println("\n");
         book2.backward();
-        System.out.println("\n");
         book3.backward();
-        System.out.println("\n");
         book4.backward();
-        System.out.println("\n");
         book5.backward();
         System.out.println("\n");
 
+        // Display Authors Backward
+        System.out.println("\nReversed Authors:");
+        orwell.backward();
+        lee.backward();
+        austen.backward();
+        fitzgerald.backward();
+        melville.backward();
+        System.out.println("\n");
+
+
         // Compare Books by Publication Year
+        System.out.println("Comparing books by Publication year:");
         System.out.println(book1.compareTo(book2) > 0 ? "First book is newer." : "Second book is newer.");
         System.out.println(book2.compareTo(book1) > 0 ? "First book is newer." : "Second book is newer.");
+        System.out.println();
 
         // Check Author Comparisons
+        System.out.println("Comparing authors by date of birth:");
         System.out.println(austen.compareTo(fitzgerald) > 0 ? "First author is older." : "Second author is older.");
         System.out.println(fitzgerald.compareTo(austen) > 0 ? "First author is older." : "Second author is older.");
+        System.out.println();
 
         // Equality Check
+        System.out.println("Comparing biographies by subject:");
         System.out.println(bio1.equals(bio2) ? "Biographies are equal." : "Biographies are not equal.");
         System.out.println(bio5.equals(bioTest) ? "Biographies are equal." : "Biographies are not equal.");
     }

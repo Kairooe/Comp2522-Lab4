@@ -10,10 +10,10 @@ package ca.bcit.comp2522.bookstore;
 public class Author extends Person implements Printable {
 
     /* The maximum length of a genre name. */
-    private static final int    MAX_GENRE_LENGTH = 30;
+    private static final int MAX_GENRE_LENGTH = 30;
 
     /* A genre. */
-    private final        String genre;
+    private final String genre;
 
     /**
      * Constructs an Author object with a name, birthdate, optional death date, and genre.

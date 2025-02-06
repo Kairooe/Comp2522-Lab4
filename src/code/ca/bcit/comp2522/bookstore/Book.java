@@ -138,7 +138,7 @@ public class Book implements
      * @return
      */
     public void backward() {
-        System.out.print(reverseTitle(this.title));
+        System.out.println(reverseTitle(this.title));
 
     }
 }
